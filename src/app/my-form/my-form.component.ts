@@ -10,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyFormComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+   }
   onClick(event,value)
   {
     console.log(event);

@@ -1,6 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
   <app-my-form></app-my-form>
+  <!--{{mail.message}}-->
+<!--  {{api}}-->
+  <ul>
+    <li *ngFor="let message of mail.messages">
+      {{message}}
+    </li>
+  </ul>
 </div>
 
 
