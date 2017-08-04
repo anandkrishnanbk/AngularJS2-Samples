@@ -4,8 +4,8 @@ import {Component, Input, OnInit} from '@angular/core';
   selector: 'app-my-form',
   template: `
     {{message}}
-   <input #myInput type="text" />
-   <button (mouseover)="onClick($event,myInput.value)">Click button</button>
+   <input #myInput type="text" [ngClass]="{mouseDown:isMouseDown}" (mousedown)="isMouseDown = true" (mouseup)="isMouseDown = false" (mouseleave)="isMouseDown =false">
+   <button (mouseover)="onClick($event,myInput.value)"  >Click button</button>
   `,
   styles: [`:host{
     display: flex;
@@ -23,6 +23,9 @@ import {Component, Input, OnInit} from '@angular/core';
       border:none;
       background-color: green;
       color:white;
+    }
+    .mouseDown{
+      border:3px solid red;
     }
     *{
       font-family: Helvetica;
