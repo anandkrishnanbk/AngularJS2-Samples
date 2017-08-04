@@ -1,11 +1,12 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-my-form',
+  encapsulation:ViewEncapsulation.Native,
   template: `
     {{message}}
    <input #myInput type="text" [ngClass]="{mouseDown:isMouseDown}" (mousedown)="isMouseDown = true" (mouseup)="isMouseDown = false" (mouseleave)="isMouseDown =false">
-   <button (mouseover)="onClick($event,myInput.value)"  >Click button</button>
+   <button class="white bg-black code" (mouseover)="onClick($event,myInput.value)"  >Click button</button>
   `,
   styles: [`:host{
     display: flex;
@@ -21,7 +22,7 @@ import {Component, Input, OnInit} from '@angular/core';
     }
     button{
       border:none;
-      background-color: green;
+     // background-color: green;
       color:white;
     }
     .mouseDown{
