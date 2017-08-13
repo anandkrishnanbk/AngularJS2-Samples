@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { MyFormComponent } from './my-form/my-form.component';
 import { MailService } from './mail.service';
+import {HomeModule} from "./home/home.module";
+import {WidgetModule } from "./widgets/widget-one.module"
 
 @NgModule({
   declarations: [
@@ -11,7 +12,7 @@ import { MailService } from './mail.service';
     MyFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,HomeModule,WidgetModule
   ],
   providers: [
     {provide:'mail',useClass:MailService},
@@ -19,3 +20,4 @@ import { MailService } from './mail.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
